@@ -9,9 +9,9 @@ function ProductDetails() {
     if (!product) return <div className="p-4">Product not found.</div>;
 
     return (
-        <div className="flex gap-4 p-4 bg-gray-50 shadow-md m-5">
+        <div className="flex gap-4 p-4 bg-gray-50 shadow-md m-5  flex flex-col md:flex-row ">
             <img
-                className="w-1/3 rounded object-cover"
+                className="md:w-1/3 rounded object-cover"
                 src={product.photo}
                 alt={product.name}
             />

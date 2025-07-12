@@ -1,4 +1,8 @@
 # 💼 DevsLane Internship Assignments – Shikhar Shaurya
+![GitHub last commit](https://img.shields.io/github/last-commit/ShauryaRajput2005/Devslane?color=green)
+![GitHub repo size](https://img.shields.io/github/repo-size/ShauryaRajput2005/Devslane)
+![Netlify Status](https://img.shields.io/netlify/YOUR_SITE_ID?label=Netlify&color=brightgreen&logo=netlify)
+
 
 This repository contains all the assignments completed during my **frontend internship at [DevsLane](https://devslane.com/)**. Each subfolder in `assignment_50` is a separate project or assignment built with **HTML**, **CSS**, **JavaScript**, **React**, and **Tailwind CSS**.
 
@@ -33,12 +37,15 @@ This repository contains all the assignments completed during my **frontend inte
 
 ## 🧰 Tech Stack
 
-- **HTML5**, **CSS3**
-- **JavaScript (ES6+)**
-- **React.js**
-- **Tailwind CSS**
-- **Vite**
-- **Netlify** (for deployment)
+## ⚙️ Tech Stack
+
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind-38B2AC?logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white)
+![Netlify](https://img.shields.io/badge/-Netlify-00C7B7?logo=netlify&logoColor=white)
 
 ---
 
