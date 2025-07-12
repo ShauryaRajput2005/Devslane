@@ -50,7 +50,7 @@ function Home() {
 
             <div className='text-black text-sm  rounded w-full flex justify-between  flex flex-col md:flex-row gap-5  '>
 
-                <input type="text" className="w-72 px-4 rounded-full bg-gray-100 text-gray-700 placeholder:text-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-sm transition duration-200" placeholder='SHRESTH GADHA HAI' onChange={handleChange} />
+                <input type="text" className="w-72 px-4 rounded-full bg-gray-100 text-gray-700 placeholder:text-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-sm transition duration-200" placeholder='Search' onChange={handleChange} />
                 <div className="w-44 px-4  rounded-md bg-gray-100 text-gray-700 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-200">
                     <label for="category"></label>
                     <select id="category" name="category" value={sort} onChange={handleSort}>
