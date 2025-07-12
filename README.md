@@ -26,8 +26,8 @@ This repository contains all the assignments completed during my **frontend inte
 | assignment54.1 | First React assignment | [View](https://assignment54-1.netlify.app) |
 | assignment55.1 | React-based assignment | [View](https://assignment55-1.netlify.app) |
 | assignment55.2 | React-based assignment | [View](https://assignment55-2.netlify.app) |
-| assignment57.1 | Sorting & searching in e-commerce | [View](https://assignment57-1.netlify.app) |
-| assignment58.1 | Improved final version of e-commerce site | [View](https://assignment58-1.netlify.app) |
+| assignment57.1 | Sorting & searching in e-commerce | [View](https://assignment571.netlify.app) |
+| assignment58.1 | Improved final version of e-commerce site | [View](https://assignment581.netlify.app) |
 
 ---
 
