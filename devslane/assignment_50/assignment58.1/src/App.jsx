@@ -16,18 +16,18 @@ import Home from './Home.jsx'
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className='flex flex-col gap-15 justify-between h-screen'>
+      <div className='flex flex-col gap-15 '>
         <div className='mb-10'> <Navbar /></div>
         <div className='self-center h-4/5'>
+        <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<ProductDetails />} />
           </Routes>
+          </BrowserRouter>
         </div>
-        <div><Footer /></div>
+        <div><Footer/></div>
       </div>
-    </BrowserRouter>
   );
 }
 

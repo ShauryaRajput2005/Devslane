@@ -3,8 +3,7 @@ import ReactDOM from "react-dom/client";
 import ProductDetails from "./ProductDetails";
 
 
-function Product({ name, category, price, photo }) {
-   const id = encodeURIComponent(name);
+function Product({ id, name, category, price, photo }) {
   return (
     <div className="bg-gray-100 flex flex-col rounded shadow-md w-full max-w-sm h-100 overflow-hidden">
       <div className="w-full h-3/5">

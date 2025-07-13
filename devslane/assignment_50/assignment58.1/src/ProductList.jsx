@@ -1,11 +1,12 @@
-import Product from './Product.jsx'
+import Product from './Product.jsx';
 
 function ProductList({ products }) {
   return (
     <>
-      {products.map((item, index) => (
+      {products.map((item) => (
         <Product
-          key={index}
+          key={item.id}
+          id={item.id}
           name={item.name}
           category={item.category}
           price={item.price}
