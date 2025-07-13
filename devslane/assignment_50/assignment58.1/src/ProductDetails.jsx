@@ -9,8 +9,8 @@ function ProductDetails() {
   if (!product) return <div className="p-4">Product not found.</div>;
 
   return (
-    <div className="flex gap-4 p-4 bg-gray-50 shadow-md m-5 flex flex-col md:flex-row rounded-xl">
-      <img className="md:w-1/3 rounded object-cover" src={product.photo} alt={product.name} />
+    <div className="flex gap-4 p-4 bg-gray-50 shadow-md m-5 flex flex-col md:flex-row rounded-xl h-screen">
+      <img className="md:w-1/3 rounded object-cover max-h-600px" src={product.photo} alt={product.name} />
       <div className="text-gray-700 flex flex-col items-start space-y-4">
         <h1 className="text-3xl font-extrabold">{product.name}</h1>
         <h3 className="text-xl font-medium">{product.price}</h3>
