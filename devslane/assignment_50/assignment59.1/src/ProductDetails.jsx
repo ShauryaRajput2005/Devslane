@@ -22,8 +22,9 @@ function ProductDetails() {
           <input type="number" min={1} defaultValue={1} className="w-16 p-1 border border-gray-300 rounded" />
           <div className="border-2 border-red-400 p-2 bg-red-400 text-white rounded-lg hover:bg-red-500 hover:scale-105 transition-transform ease-in-out duration-200">
             <button>Add to Cart</button>
-      
+            
           </div>
+          <Link  to='/' className="border-2 border-red-400 p-2 bg-red-400 text-white rounded-lg hover:bg-red-500 hover:scale-105 transition-transform ease-in-out duration-200">Back</Link>
         </div>
       </div>
     </div>
