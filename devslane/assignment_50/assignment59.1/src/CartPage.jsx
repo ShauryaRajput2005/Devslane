@@ -1,7 +1,15 @@
 import CartList from "./CartList";
 
 function CartPage({ cartItems, updateQuantity, removeFromCart }) {
-  const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = cartItems.reduce((sum, item) => {
+    const price = parseFloat(item.price.replace('$', '')) || 0;
+    const qty = item.quantity || 1;
+    return sum + price * qty;
+  }, 0);
+
+
+  console.log("Cart Items:", cartItems);
+  console.log("Total:", total);
 
   return (
     <div className="p-4">
@@ -17,7 +25,6 @@ function CartPage({ cartItems, updateQuantity, removeFromCart }) {
             removeFromCart={removeFromCart}
           />
 
-          {/* Coupon + Update Section */}
           <div className="flex flex-wrap justify-between mb-6 gap-3">
             <div className="flex gap-2">
               <input
@@ -34,7 +41,6 @@ function CartPage({ cartItems, updateQuantity, removeFromCart }) {
             </button>
           </div>
 
-          {/* Total Box */}
           <div className="border max-w-xs ml-auto p-4 rounded">
             <h3 className="font-bold mb-2">Cart totals</h3>
             <div className="flex justify-between mb-2">

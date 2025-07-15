@@ -38,15 +38,19 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col ">
         {/* Fixed Navbar */}
         <Navbar />
 
         {/* Main Content */}
-        <main className="flex-grow mt-16 mb-24">
+        <main className="mt-16 mb-24 justify-center-items-center">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/product/:id" element={<ProductDetails addToCart={addToCart} />} />
+            <Route
+              path="/product/:id"
+              element={<ProductDetails addToCart={addToCart} />}
+            />
+
             <Route path="/cart" element={
               <CartPage
                 cartItems={cartItems}

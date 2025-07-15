@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import originalData from "./data";
 import { Link } from 'react-router-dom';
 
-function ProductDetails() {
+function ProductDetails( {addToCart}) {
   const { id } = useParams();
   const productId = parseInt(id, 10);
   const product = originalData.find(p => p.id === productId);
@@ -21,10 +21,19 @@ function ProductDetails() {
         <div className="flex gap-5">
           <input type="number" min={1} defaultValue={1} className="w-16 p-1 border border-gray-300 rounded" />
           <div className="border-2 border-red-400 p-2 bg-red-400 text-white rounded-lg hover:bg-red-500 hover:scale-105 transition-transform ease-in-out duration-200">
-            <button>Add to Cart</button>
-            
+            <button
+              onClick={() => {
+                console.log("Adding:", product);  // ✅ Check if this prints
+                addToCart(product);
+              }}
+            >
+              Add to Cart
+            </button>
+
+
+
           </div>
-          <Link  to='/' className="border-2 border-red-400 p-2 bg-red-400 text-white rounded-lg hover:bg-red-500 hover:scale-105 transition-transform ease-in-out duration-200">Back</Link>
+          <Link to='/' className="border-2 border-red-400 p-2 bg-red-400 text-white rounded-lg hover:bg-red-500 hover:scale-105 transition-transform ease-in-out duration-200">Back</Link>
         </div>
       </div>
     </div>
