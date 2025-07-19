@@ -91,8 +91,21 @@ Big thanks to DevsLane for this amazing opportunity.
 This internship helped me grow as a frontend developer and sharpen my skills with real-world UI/UX challenges.
  
 ---
-📬 Connect with Me
-<p align="center"> <a href="https://github.com/ShauryaRajput2005" target="_blank"> <img src="https://img.shields.io/badge/GitHub-ShauryaRajput2005-181717?style=for-the-badge&logo=github" /> </a> <a href="https://www.linkedin.com/in/shikhar-shaurya" target="www.linkedin.com/in/shikhar-shaurya25"> <img src="https://img.shields.io/badge/LinkedIn-Shikhar%20Shaurya-blue?style=for-the-badge&logo=linkedin" /> </a> </p> <p align="center">✍️ Made with ❤️ by Shikhar Shaurya</p> ```
+## 📬 Connect with Me
+
+<p align="center">
+  <a href="https://github.com/ShauryaRajput2005" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-ShauryaRajput2005-181717?style=for-the-badge&logo=github" alt="GitHub">
+  </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/shikhar-shaurya25" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-Shikhar%20Shaurya-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn">
+  </a>
+</p>
+
+<p align="center">
+  ✍️ Made with ❤️ by <strong>Shikhar Shaurya</strong>
+</p>
 
 ---
 ## 🛠️ How to Run Locally
