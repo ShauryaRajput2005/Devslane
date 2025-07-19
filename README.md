@@ -5,11 +5,16 @@
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=500&color=00BFFF&center=true&vCenter=true&width=435&lines=Frontend+Intern+at+DevsLane;Building+with+React+and+Tailwind+CSS;Deploying+Projects+on+Netlify" alt="Typing SVG" />
 </p>
+## 🚀 Deployment & Project Info
 
 <p align="center">
-  <img src="https://img.shields.io/github/last-commit/ShauryaRajput2005/Devslane?color=green" />
-  <img src="https://img.shields.io/github/repo-size/ShauryaRajput2005/Devslane" />
-  <img src="https://img.shields.io/netlify/YOUR_SITE_ID?label=Netlify&color=brightgreen&logo=netlify" />
+  <img src="https://img.shields.io/github/last-commit/ShauryaRajput2005/Devslane?color=green" alt="Last Commit">
+  &nbsp;
+  <img src="https://img.shields.io/github/repo-size/ShauryaRajput2005/Devslane" alt="Repo Size">
+  &nbsp;
+  <a href="https://app.netlify.com/teams/shauryarajput2005/projects" target="_blank">
+    <img src="https://img.shields.io/badge/Netlify-Dashboard-brightgreen?style=flat&logo=netlify" alt="Netlify Dashboard">
+  </a>
 </p>
 
 ---
