@@ -97,7 +97,6 @@ npm run dev
 
 
 🤝 Acknowledgments
-
 Big thanks to DevsLane for this amazing opportunity.
 This internship helped me grow as a frontend developer and sharpen my skills with real-world UI/UX challenges.
 
