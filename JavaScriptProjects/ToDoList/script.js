@@ -44,26 +44,6 @@ addbtn.addEventListener("click", function () {
 
     content.value = "";
 
-    let done = false;
-    check.addEventListener("click", function () {
-        done = !done;
-        check.innerText = done ? "❌" : "✅";
-
-
-        if (check.innerText === "❌") {
-            check.style.background = "rgba(174, 16, 16, 0.7)";
-            li.style.background = "rgba(174, 16, 16, 0.3)";
-        } else {
-            check.style.background = " rgba(16, 185, 129, 0.8)" ;
-            li.style.background = "rgba(212, 212, 218, 0.5)";
-        }
-        if (done) {
-            li.classList.add("done");
-        } else {
-            li.classList.remove("done");
-        }
-    });
-
     del.addEventListener("click", function () {
         container.removeChild(task);
     })
