@@ -1,60 +1,105 @@
-# 💼 DevsLane Internship Assignments – Shikhar Shaurya
-![GitHub last commit](https://img.shields.io/github/last-commit/ShauryaRajput2005/Devslane?color=green)
-![GitHub repo size](https://img.shields.io/github/repo-size/ShauryaRajput2005/Devslane)
-![Netlify Status](https://img.shields.io/netlify/YOUR_SITE_ID?label=Netlify&color=brightgreen&logo=netlify)
+<h1 align="center">
+  💼 DevsLane Internship Assignments – Shikhar Shaurya
+</h1>
 
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=500&color=00BFFF&center=true&vCenter=true&width=435&lines=Frontend+Intern+at+DevsLane;Building+with+React+and+Tailwind+CSS;Deploying+Projects+on+Netlify" alt="Typing SVG" />
+</p>
 
-This repository contains all the assignments completed during my **frontend internship at [DevsLane](https://devslane.com/)**. Each subfolder in `assignment_50` is a separate project or assignment built with **HTML**, **CSS**, **JavaScript**, **React**, and **Tailwind CSS**.
-
-> ✅ All assignments are **individually deployed** and accessible on **Netlify**.
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/ShauryaRajput2005/Devslane?color=green" />
+  <img src="https://img.shields.io/github/repo-size/ShauryaRajput2005/Devslane" />
+  <img src="https://img.shields.io/netlify/YOUR_SITE_ID?label=Netlify&color=brightgreen&logo=netlify" />
+</p>
 
 ---
 
-## 🚀 Assignment List & Live Demos
+## 🏢 About DevsLane
 
-| Assignment Folder | Description | Live Link |
-|-------------------|-------------|-----------|
-| assignment51.1 | UI project using HTML/CSS | [View](https://assignment51-1.netlify.app) |
-| assignment51.2 | UI project using HTML/CSS | [View](https://assignment51-2.netlify.app) |
-| assignment51.3 | UI project using HTML/CSS | [View](https://assignment51-3.netlify.app) |
-| assignment51.4 | UI project using HTML/CSS | [View](https://assignment51-4.netlify.app) |
-| assignment52.1 | Layout/design-focused task | [View](https://assignment52-1.netlify.app) |
-| assignment52.2 | Layout/design-focused task | [View](https://assignment52-2.netlify.app) |
-| assignment52.3 | Layout/design-focused task | [View](https://assignment52-3.netlify.app) |
-| assignment52.4 | Layout/design-focused task | [View](https://assignment52-4.netlify.app) |
-| assignment52.5 | Layout/design-focused task | [View](https://assignment52-5.netlify.app) |
-| assignment52.6 | Layout/design-focused task | [View](https://assignment52-6.netlify.app) |
-| assignment53.1 | UI/logic implementation project | [View](https://assignment53-1.netlify.app) |
-| assignment53.2 | UI/logic implementation project | [View](https://assignment53-2.netlify.app) |
-| assignment53.3 | UI/logic implementation project | [View](https://assignment53-3.netlify.app) |
-| assignment54.1 | First React assignment | [View](https://assignment54-1.netlify.app) |
-| assignment55.1 | React-based assignment | [View](https://assignment55-1.netlify.app) |
-| assignment55.2 | React-based assignment | [View](https://assignment55-2.netlify.app) |
-| assignment57.1 | Sorting & searching in e-commerce | [View](https://assignment571.netlify.app) |
-| assignment58.1 | Improved final version of e-commerce site | [View](https://assignment581.netlify.app) |
-| assignment59.1 | Added Cart Page  | [View](https://assignment591.netlify.app) |
+**[DevsLane](https://devslane.com/)** is a tech-forward company that delivers high-performance software solutions.  
+Their internship program provides real-world experience to developers in frontend, backend, and full-stack development.
+
+---
+
+## 🙋‍♂️ About Me
+
+Hi! I'm **Shikhar Shaurya**, a frontend development intern at DevsLane.  
+During my internship, I built a variety of frontend projects using:
+
+- 💻 HTML, CSS, JavaScript
+- ⚛️ React & Tailwind CSS
+- ⚡ Vite for fast development
+- 🌍 Deployed using Netlify
+
+> ✅ All assignments are **individually deployed** and accessible online.
+
+---
+
+## 📚 Assignment Showcase
+
+### 🧱 HTML/CSS Projects
+<p align="center">
+  <a href="https://assignment51-1.netlify.app"><img src="https://img.shields.io/badge/Assignment%2051.1-HTML%2FCSS-blue?style=for-the-badge&logo=html5" /></a>
+  <a href="https://assignment51-2.netlify.app"><img src="https://img.shields.io/badge/Assignment%2051.2-HTML%2FCSS-blue?style=for-the-badge&logo=css3" /></a>
+  <a href="https://assignment51-3.netlify.app"><img src="https://img.shields.io/badge/Assignment%2051.3-HTML%2FCSS-blue?style=for-the-badge&logo=css3" /></a>
+  <a href="https://assignment51-4.netlify.app"><img src="https://img.shields.io/badge/Assignment%2051.4-HTML%2FCSS-blue?style=for-the-badge&logo=css3" /></a>
+</p>
+
+### 📐 Layout & Design Tasks
+<p align="center">
+  <a href="https://assignment52-1.netlify.app"><img src="https://img.shields.io/badge/Assignment%2052.1-Layout-purple?style=for-the-badge" /></a>
+  <a href="https://assignment52-2.netlify.app"><img src="https://img.shields.io/badge/Assignment%2052.2-Layout-purple?style=for-the-badge" /></a>
+  <a href="https://assignment52-3.netlify.app"><img src="https://img.shields.io/badge/Assignment%2052.3-Layout-purple?style=for-the-badge" /></a>
+  <a href="https://assignment52-4.netlify.app"><img src="https://img.shields.io/badge/Assignment%2052.4-Layout-purple?style=for-the-badge" /></a>
+  <a href="https://assignment52-5.netlify.app"><img src="https://img.shields.io/badge/Assignment%2052.5-Layout-purple?style=for-the-badge" /></a>
+  <a href="https://assignment52-6.netlify.app"><img src="https://img.shields.io/badge/Assignment%2052.6-Layout-purple?style=for-the-badge" /></a>
+</p>
+
+### 🧠 JavaScript + DOM Projects
+<p align="center">
+  <a href="https://assignment53-1.netlify.app"><img src="https://img.shields.io/badge/Assignment%2053.1-JavaScript-yellow?style=for-the-badge&logo=javascript" /></a>
+  <a href="https://assignment53-2.netlify.app"><img src="https://img.shields.io/badge/Assignment%2053.2-JavaScript-yellow?style=for-the-badge&logo=javascript" /></a>
+  <a href="https://assignment53-3.netlify.app"><img src="https://img.shields.io/badge/Assignment%2053.3-JavaScript-yellow?style=for-the-badge&logo=javascript" /></a>
+</p>
+
+### ⚛️ React Projects
+<p align="center">
+  <a href="https://assignment54-1.netlify.app"><img src="https://img.shields.io/badge/Assignment%2054.1-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" /></a>
+  <a href="https://assignment55-1.netlify.app"><img src="https://img.shields.io/badge/Assignment%2055.1-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" /></a>
+  <a href="https://assignment55-2.netlify.app"><img src="https://img.shields.io/badge/Assignment%2055.2-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" /></a>
+</p>
+
+### 🛒 E-Commerce React App
+<p align="center">
+  <a href="https://assignment571.netlify.app"><img src="https://img.shields.io/badge/Assignment%2057.1-Sorting%20%26%20Search-orange?style=for-the-badge" /></a>
+  <a href="https://assignment581.netlify.app"><img src="https://img.shields.io/badge/Assignment%2058.1-Ecommerce%20UI-orange?style=for-the-badge" /></a>
+  <a href="https://assignment591.netlify.app"><img src="https://img.shields.io/badge/Assignment%2059.1-Cart%20Page-orange?style=for-the-badge" /></a>
+</p>
 
 ---
 
 ## 🧰 Tech Stack
 
-## ⚙️ Tech Stack
-
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black)
-![Tailwind CSS](https://img.shields.io/badge/-Tailwind-38B2AC?logo=tailwind-css&logoColor=white)
-![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white)
-![Netlify](https://img.shields.io/badge/-Netlify-00C7B7?logo=netlify&logoColor=white)
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind,vite,netlify" />
+</p>
 
 ---
 
 ## 🛠️ How to Run Locally
 
-For React projects:
+For any React-based assignment:
 
 ```bash
 cd assignment_50/assignment54.1
 npm install
 npm run dev
+
+
+🤝 Acknowledgments
+
+Big thanks to DevsLane for this amazing opportunity.
+This internship helped me grow as a frontend developer and sharpen my skills with real-world UI/UX challenges.
+
+📬 Connect with Me
+<p align="center"> <a href="https://github.com/ShauryaRajput2005" target="_blank"> <img src="https://img.shields.io/badge/GitHub-ShauryaRajput2005-181717?style=for-the-badge&logo=github" /> </a> <a href="https://www.linkedin.com/in/shikhar-shaurya" target="_blank"> <img src="https://img.shields.io/badge/LinkedIn-Shikhar%20Shaurya-blue?style=for-the-badge&logo=linkedin" /> </a> </p> <p align="center">✍️ Made with ❤️ by Shikhar Shaurya</p> ```
