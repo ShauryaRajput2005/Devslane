@@ -86,6 +86,15 @@ During my internship, I built a variety of frontend projects using:
 
 ---
 
+🤝 Acknowledgments
+Big thanks to DevsLane for this amazing opportunity.
+This internship helped me grow as a frontend developer and sharpen my skills with real-world UI/UX challenges.
+ 
+---
+📬 Connect with Me
+<p align="center"> <a href="https://github.com/ShauryaRajput2005" target="_blank"> <img src="https://img.shields.io/badge/GitHub-ShauryaRajput2005-181717?style=for-the-badge&logo=github" /> </a> <a href="https://www.linkedin.com/in/shikhar-shaurya" target="_blank"> <img src="https://img.shields.io/badge/LinkedIn-Shikhar%20Shaurya-blue?style=for-the-badge&logo=linkedin" /> </a> </p> <p align="center">✍️ Made with ❤️ by Shikhar Shaurya</p> ```
+
+---
 ## 🛠️ How to Run Locally
 
 For any React-based assignment:
@@ -94,11 +103,3 @@ For any React-based assignment:
 cd assignment_50/assignment54.1
 npm install
 npm run dev
-
-
-🤝 Acknowledgments
-Big thanks to DevsLane for this amazing opportunity.
-This internship helped me grow as a frontend developer and sharpen my skills with real-world UI/UX challenges.
-
-📬 Connect with Me
-<p align="center"> <a href="https://github.com/ShauryaRajput2005" target="_blank"> <img src="https://img.shields.io/badge/GitHub-ShauryaRajput2005-181717?style=for-the-badge&logo=github" /> </a> <a href="https://www.linkedin.com/in/shikhar-shaurya" target="_blank"> <img src="https://img.shields.io/badge/LinkedIn-Shikhar%20Shaurya-blue?style=for-the-badge&logo=linkedin" /> </a> </p> <p align="center">✍️ Made with ❤️ by Shikhar Shaurya</p> ```
