@@ -19,7 +19,7 @@ function CartRow({ item, updateQuantity, removeFromCart }) {
       </td>
 
       {/* 💲 Price */}
-      <td className="p-2">${parseFloat(item.price.replace('$', ''))}</td>
+      <td className="p-2">${parseFloat(item.price)}</td>
 
       {/* 🔢 Quantity Input */}
       <td className="p-2">
@@ -39,7 +39,7 @@ function CartRow({ item, updateQuantity, removeFromCart }) {
 
       {/* 💵 Subtotal */}
       <td className="p-2 text-green-600 font-semibold">
-        ${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}
+        ${(parseFloat(item.price) * item.quantity).toFixed(2)}
       </td>
 
     </tr>

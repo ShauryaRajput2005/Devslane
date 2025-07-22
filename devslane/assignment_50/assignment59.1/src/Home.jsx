@@ -4,19 +4,19 @@ import Navbar from './Navbar.jsx'
 import Tabs from './Tabs.jsx'
 import Footer from './Footer.jsx'
 import ProductList from './ProductList.jsx'
-import originalData from './data.js'
+import prolist from './data.js'
 
 
 function Home() {
     const [query, setQuery] = useState("");
-    const [filteredData, setFilteredData] = useState(originalData);
+    const [filteredData, setFilteredData] = useState(prolist);
     const [sort, setSort] = useState('default');
 
     function handleChange(event) {
         const query = event.target.value.toLowerCase();
         setQuery(query);
 
-        const filtered = originalData.filter(item =>
+        const filtered = prolist.filter(item =>
             item.name.toLowerCase().includes(query)
         );
 
@@ -36,7 +36,7 @@ function Home() {
         } else if (sortValue === 'name') {
             sorted.sort((a, b) => a.name.localeCompare(b.name));
         } else {
-            sorted = [...originalData]; // reset to original order
+            sorted = [...prolist]; // reset to original order
         }
 
         setFilteredData(sorted);

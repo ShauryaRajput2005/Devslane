@@ -1,4 +1,4 @@
-const originalData = [
+const prolist = [
   {
     id:1,
     name: " Black Printed Coffee Mug",
@@ -64,4 +64,4 @@ const originalData = [
   }
 ];
 
-export default originalData;
+export default prolist;

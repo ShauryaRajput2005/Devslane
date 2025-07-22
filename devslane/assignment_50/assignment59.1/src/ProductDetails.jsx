@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import originalData from "./data";
+import prolist from "./data";
 import { Link } from 'react-router-dom';
 
 function ProductDetails( {addToCart}) {
   const { id } = useParams();
   const productId = parseInt(id, 10);
-  const product = originalData.find(p => p.id === productId);
+  const product = prolist.find(p => p.id === productId);
 
   if (!product) return <div className="p-4">Product not found.</div>;
 

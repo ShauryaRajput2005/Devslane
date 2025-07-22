@@ -2,7 +2,7 @@ import CartList from "./CartList";
 
 function CartPage({ cartItems, updateQuantity, removeFromCart }) {
   const total = cartItems.reduce((sum, item) => {
-    const price = parseFloat(item.price.replace('$', '')) || 0;
+   const price = Number(item.price) || 0;
     const qty = item.quantity || 1;
     return sum + price * qty;
   }, 0);

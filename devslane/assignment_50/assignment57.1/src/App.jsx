@@ -9,7 +9,7 @@ import Footer from './Footer.jsx'
 import ProductList from './ProductList.jsx'
 
 
-const originalData = [
+const prolist = [
   {
     name: " Black Printed Coffee Mug",
     category: "Mug",
@@ -69,14 +69,14 @@ const originalData = [
 
 function App() {
   const [query, setQuery] = useState("");
-  const [filteredData, setFilteredData] = useState(originalData);
+  const [filteredData, setFilteredData] = useState(prolist);
   const [sort, setSort] = useState('default');
 
   function handleChange(event) {
     const query = event.target.value.toLowerCase();
     setQuery(query);
 
-    const filtered = originalData.filter(item =>
+    const filtered = prolist.filter(item =>
       item.name.toLowerCase().includes(query)
     );
 
@@ -96,7 +96,7 @@ function App() {
     } else if (sortValue === 'name') {
       sorted.sort((a, b) => a.name.localeCompare(b.name));
     } else {
-      sorted = [...originalData]; // reset to original order
+      sorted = [...prolist]; // reset to original order
     }
 
     setFilteredData(sorted);

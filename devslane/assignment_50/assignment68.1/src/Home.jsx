@@ -1,22 +1,34 @@
-import { useState } from 'react'
+import { useState ,useEffect} from 'react'
 import Product from './Product.jsx'
 import Navbar from './Navbar.jsx'
 import Tabs from './Tabs.jsx'
 import Footer from './Footer.jsx'
 import ProductList from './ProductList.jsx'
-import originalData from './data.js'
+import { getProductList } from './api.js'
+
 
 
 function Home() {
+
+    const [prolist, setprolist] = useState([])
+    useEffect(function () {
+        const response = getProductList();
+        response.then(function (response) {
+            setprolist(response.data.products)
+        })
+    }, [])
+
     const [query, setQuery] = useState("");
-    const [filteredData, setFilteredData] = useState(originalData);
+    const [filteredData, setFilteredData] = useState(prolist);
     const [sort, setSort] = useState('default');
+
+
 
     function handleChange(event) {
         const query = event.target.value.toLowerCase();
         setQuery(query);
 
-        const filtered = originalData.filter(item =>
+        const filtered = prolist.filter(item =>
             item.name.toLowerCase().includes(query)
         );
 
@@ -36,7 +48,7 @@ function Home() {
         } else if (sortValue === 'name') {
             sorted.sort((a, b) => a.name.localeCompare(b.name));
         } else {
-            sorted = [...originalData]; // reset to original order
+            sorted = [...prolist]; // reset to original order
         }
 
         setFilteredData(sorted);
@@ -52,7 +64,7 @@ function Home() {
 
                 <input type="text" className="w-72 px-4 rounded-full bg-gray-100 text-gray-700 placeholder:text-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-sm transition duration-200" placeholder='Search' onChange={handleChange} />
                 <div className="w-44 px-4  rounded-md bg-gray-100 text-gray-700 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-200">
-                    <label for="category"></label>
+                    <label htmlFor="category"></label>
                     <select id="category" name="category" value={sort} onChange={handleSort}>
                         <option value="default">Default</option>
                         <option value="name">Name</option>
