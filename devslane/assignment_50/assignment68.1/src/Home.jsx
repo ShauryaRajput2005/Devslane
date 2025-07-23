@@ -1,4 +1,4 @@
-import { useState ,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import Product from './Product.jsx'
 import Navbar from './Navbar.jsx'
 import Tabs from './Tabs.jsx'

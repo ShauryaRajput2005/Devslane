@@ -4,12 +4,19 @@ import { getProductList } from './api.js';
 
 function ProductList({ products }) {
   const [prolist,setprolist]=useState([])
+  const [loader,setLoader]=useState(true);
+
   useEffect(function(){
     const response =getProductList();
     response.then(function(response){
       setprolist(response.data.products)
+      setLoader(false);
     })
   },[])
+  
+   if (!prolist) {
+    return <Loading />;
+  }
   return (
     <>
       {prolist.map((item) => (
