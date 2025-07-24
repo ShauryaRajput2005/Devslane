@@ -28,7 +28,8 @@ function ProductDetails({ addToCart }) {
       <img className="md:w-1/3 rounded object-cover max-h-600px" src={product.thumbnail} alt={product.title} />
       <div className="text-gray-700 flex flex-col items-start space-y-4">
         <h1 className="text-3xl font-extrabold">{product.title}</h1>
-        <h3 className="text-xl font-medium">{product.price}</h3>
+      <h3 className="text-xl font-medium">${product.price}</h3>
+
         <p className='text-left'>
           Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit...
         </p>

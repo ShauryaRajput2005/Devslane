@@ -17,6 +17,11 @@ function Home() {
             setprolist(response.data.products)
         })
     }, [])
+    
+    useEffect(() => {
+        setFilteredData(prolist);
+    }, [prolist]);
+
 
     const [query, setQuery] = useState("");
     const [filteredData, setFilteredData] = useState(prolist);
@@ -39,7 +44,7 @@ function Home() {
         const sortValue = event.target.value;
         setSort(sortValue);
 
-        let sorted = [...filteredData]; // create a shallow copy
+        let sorted = [...filteredData]; 
 
         if (sortValue === 'Price-low') {
             sorted.sort((a, b) => parseFloat(a.price.slice(1)) - parseFloat(b.price.slice(1)));
@@ -63,6 +68,7 @@ function Home() {
             <div className='text-black text-sm  rounded w-full flex justify-between  flex flex-col md:flex-row gap-5  '>
 
                 <input type="text" className="w-72 px-4 rounded-full bg-gray-100 text-gray-700 placeholder:text-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-sm transition duration-200" placeholder='Search' onChange={handleChange} />
+
                 <div className="w-44 px-4  rounded-md bg-gray-100 text-gray-700 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-200">
                     <label htmlFor="category"></label>
                     <select id="category" name="category" value={sort} onChange={handleSort}>

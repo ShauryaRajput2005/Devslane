@@ -4,8 +4,9 @@ import ProductDetails from "./ProductDetails";
 
 
 function Product({ id, name, category, price, photo ,rating }) {
+
   return (
-    <div className="bg-gray-100 flex flex-col rounded shadow-md w-full max-w-sm h-100 overflow-hidden bg-white/20 backdrop-blur-xs backdrop-opacity-50 transition-transform  duration-200 ease-in-out hover:scale-101">
+    <div className="bg-gray-100 flex flex-col rounded shadow-md w-full max-w-sm h-110 overflow-hidden bg-white/20 backdrop-blur-xs backdrop-opacity-50 transition-transform hover:backdrop-opacity-70 duration-200 ease-in-out hover:scale-102">
       <div className="w-full h-3/5">
         <img
           src={photo}
@@ -19,8 +20,8 @@ function Product({ id, name, category, price, photo ,rating }) {
             {name}
           </p>
           <p> Rating : {rating} </p>
-          <p className="text-black text-sm font-semibold">{price}</p>
-          <Link to={`/product/${id}`} className="bg-orange-500 text-white px-4 py-1 rounded-md shadow hover:bg-orange-600 hover:scale-115 transition duration-200 ease-in-out flex items-center gap-1">Details
+          <p className="text-black text-sm font-semibold">${price}</p>
+          <Link to={`/product/${id}`} className="bg-orange-500 text-white px-4 py-1 m-2 rounded-md shadow hover:bg-orange-600 hover:scale-115 transition duration-200 ease-in-out flex items-center gap-1">Details
           </Link>
       
       </div>
