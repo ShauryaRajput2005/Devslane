@@ -51,7 +51,7 @@ function Home() {
         } else if (sortValue === 'Price-high') {
             sorted.sort((a, b) => parseFloat(b.price.slice(1)) - parseFloat(a.price.slice(1)));
         } else if (sortValue === 'name') {
-            sorted.sort((a, b) => a.name.localeCompare(b.name));
+            sorted.sort((a, b) => a.title.localeCompare(b.title));
         } else {
             sorted = [...prolist]; // reset to original order
         }
