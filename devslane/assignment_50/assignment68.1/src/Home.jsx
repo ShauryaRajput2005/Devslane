@@ -17,14 +17,14 @@ function Home() {
             setprolist(response.data.products)
         })
     }, [])
-    
+
     useEffect(() => {
         setFilteredData(prolist);
     }, [prolist]);
 
 
     const [query, setQuery] = useState("");
-    const [filteredData, setFilteredData] = useState(prolist);
+    const [filteredData, setFilteredData] = useState([]);
     const [sort, setSort] = useState('default');
 
 
@@ -34,8 +34,9 @@ function Home() {
         setQuery(query);
 
         const filtered = prolist.filter(item =>
-            item.name.toLowerCase().includes(query)
+            (item.title ?? "").toLowerCase().includes(query)
         );
+
 
         setFilteredData(filtered);
     }
@@ -44,20 +45,24 @@ function Home() {
         const sortValue = event.target.value;
         setSort(sortValue);
 
-        let sorted = [...filteredData]; 
+        let sorted = [...filteredData];
 
         if (sortValue === 'Price-low') {
-            sorted.sort((a, b) => parseFloat(a.price.slice(1)) - parseFloat(b.price.slice(1)));
+            sorted.sort((a, b) => a.price - b.price);
         } else if (sortValue === 'Price-high') {
-            sorted.sort((a, b) => parseFloat(b.price.slice(1)) - parseFloat(a.price.slice(1)));
+            sorted.sort((a, b) => b.price - a.price);
         } else if (sortValue === 'name') {
             sorted.sort((a, b) => a.title.localeCompare(b.title));
         } else {
-            sorted = [...prolist]; // reset to original order
+            sorted = [...prolist];
         }
 
         setFilteredData(sorted);
     }
+    useEffect(() => {
+        console.log("Product List updated:", prolist);
+    }, [prolist]);
+
 
     return (
 

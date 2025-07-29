@@ -1,29 +1,17 @@
-import { useEffect, useState } from 'react';
 import Product from './Product.jsx';
-import { getProductList } from './api.js';
 
 function ProductList({ products }) {
-  const [prolist,setprolist]=useState([])
-  const [loader,setLoader]=useState(true);
-
-  useEffect(function(){
-    const response =getProductList();
-    response.then(function(response){
-      setprolist(response.data.products)
-      setLoader(false);
-    })
-  },[])
-  
-   if (!prolist) {
-    return <Loading />;
+  if (!products || products.length === 0) {
+    return <p className="text-gray-500 text-center w-full">No products found.</p>;
   }
+
   return (
     <>
-      {prolist.map((item) => (
+      {products.map((item) => (
         <Product
           key={item.id}
           id={item.id}
-          name={item.title}
+          title={item.title}
           category={item.category}
           price={item.price}
           photo={item.thumbnail}

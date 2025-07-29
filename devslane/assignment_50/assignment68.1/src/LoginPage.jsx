@@ -2,7 +2,7 @@ import { useState } from 'react';;
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { basicSchema } from "./schemas";
-import canvas from './assets/canvas.png';
+
 
 
 
@@ -35,9 +35,6 @@ function LoginPage({ setisVerified }) {
 
     return (
         <div className='h-screen w-screen bg-blue-500 flex flex-col justify-center items-center bg-[url("https://plus.unsplash.com/premium_photo-1673029926917-40a9e3336b5b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] bg-no-repeat bg-cover'>
-
-
-            <div className='w-64 border-none bg-white/20 backdrop-blur-xs backdrop-opacity-50 '><img className="bg-white/20 backdrop-blur-xs backdrop-opacity-50" src={canvas} alt="" /></div>
 
             <form onSubmit={formik.handleSubmit} className="bg-white p-6 rounded shadow-md bg-white/30 backdrop-invert backdrop-opacity-10 flex flex-col">
                 <div className="mb-4">

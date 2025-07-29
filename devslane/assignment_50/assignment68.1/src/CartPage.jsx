@@ -2,7 +2,7 @@ import CartList from "./CartList";
 
 function CartPage({ cartItems, updateQuantity, removeFromCart }) {
   const total = cartItems.reduce((sum, item) => {
-   const price = Number(item.price) || 0;
+    const price = Number(item.price) || 0;
     const qty = item.quantity || 1;
     return sum + price * qty;
   }, 0);
@@ -12,11 +12,13 @@ function CartPage({ cartItems, updateQuantity, removeFromCart }) {
   console.log("Total:", total);
 
   return (
-    <div className="p-4">
+    <div className="p-4 h-screen w-screen">
       <h2 className="text-2xl font-bold mb-4">🛒 Your Cart</h2>
 
       {cartItems.length === 0 ? (
-        <p>Your cart is empty</p>
+        <div className="flex items-center justify-center h-[60vh] w-full">
+          <h1 className="text-3xl text-gray-600">Your cart is empty</h1>
+        </div>  
       ) : (
         <>
           <CartList

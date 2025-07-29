@@ -11,10 +11,10 @@ function CartRow({ item, updateQuantity, removeFromCart }) {
         <div className="flex items-center gap-3 max-w-[200px]">
           <img
             src={item.photo || item.thumbnail}
-            alt={item.name}
+            alt={item.title}
             className="w-12 h-12 object-cover rounded"
           />
-          <span className="text-red-500">{item.name}</span>
+          <span className="text-red-500">{item.title}</span>
         </div>
       </td>
 
