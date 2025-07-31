@@ -1,4 +1,0 @@
-browser has two engines 1. layer Engine 
-                        2. JS Engine
-
-differnce between browser environment and node environment
