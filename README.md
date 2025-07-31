@@ -77,8 +77,11 @@ During my internship, I built a variety of frontend projects using:
 ### 🛒 E-Commerce React App
 <p align="center">
   <a href="https://assignment571.netlify.app"><img src="https://img.shields.io/badge/Assignment%2057.1-Sorting%20%26%20Search-orange?style=for-the-badge" /></a>
+
   <a href="https://assignment581.netlify.app"><img src="https://img.shields.io/badge/Assignment%2058.1-Ecommerce%20UI-orange?style=for-the-badge" /></a>
+
   <a href="https://assignment591.netlify.app"><img src="https://img.shields.io/badge/Assignment%2059.1-Cart%20Page-orange?style=for-the-badge" /></a>
+  <a href="https://assignment68-1.netlify.app"><img src="https://img.shields.io/badge/Assignment%2068.1-Cart%20Page-orange?style=for-the-badge" /></a>
 </p>
 
 ---
