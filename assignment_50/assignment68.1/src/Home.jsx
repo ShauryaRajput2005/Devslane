@@ -67,7 +67,7 @@ function Home() {
     return (
 
 
-        <div className=' flex flex-col self-center bg-white-100 shadow-md p-6 max-w-6xl'>
+        <div className=' flex flex-col self-center  p-6 max-w-6xl '>
 
 
             <div className='text-black text-sm  rounded w-full flex justify-between  flex flex-col md:flex-row gap-5  '>
