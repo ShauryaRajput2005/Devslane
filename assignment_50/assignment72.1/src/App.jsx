@@ -1,94 +1,115 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Product from './Product.jsx'
-import Navbar from './Navbar.jsx'
-import Tabs from './Tabs.jsx'
-import Footer from './Footer.jsx'
+import { useState } from 'react';
+import './App.css';
+import Header from './Header';
+import ToDoForm from './ToDoForm';
+import Task from './Task';
 
 function App() {
+  const [taskList, setTaskList] = useState([]);
+  const [doneList, setDoneList] = useState([]);
+
+  const [formshow, setformshow] = useState(false);
+  const [buttonShow, setbuttonShow] = useState(true);
+
+  const handleAdd = () => {
+    setformshow(true);
+    setbuttonShow(false);
+  }
+
+  const handleRefresh = () => {
+    console.log("Refreshing...");
+    setTaskList([]);
+    setDoneList([]);
+
+  };
+
+
+  const handleCheck = (taskIndex) => {
+    const completed = taskList[taskIndex]
+    setTaskList(taskList.filter((task, i) => i !== taskIndex));
+    setDoneList([...doneList, completed]);
+
+  }
+  const handleUncheck = (taskIndex) => {
+    const undone = doneList[taskIndex]
+    setDoneList(doneList.filter((task, i) => i !== taskIndex));
+    setTaskList([...taskList, undone]);
+
+  }
+
+  const handleAddTask = (task) => {
+    setTaskList([...taskList, task]);
+    setformshow(false);
+    setbuttonShow(true);
+  }
+
+  const handleCancel = () => {
+    setformshow(false);
+    setbuttonShow(true);
+    console.log("Task creation cancelled");
+  }
   return (
-    <div className='flex flex-col gap-15'>
-      <div className='mb-10'><Navbar /></div>
 
-      <div className=' flex flex-col self-center bg-white p-6 max-w-6xl'>
+    <div className="flex flex-col h-screen text-black gap-5 p-4 bg-gray-100">
 
-        <div className='text-black text-xs border-1 border-gray-300 rounded self-end'>   
-        <label for="category"></label>
-        <select id="category" name="category">
-          <option value="mugs">Mugs</option>
-          <option value="tshirts">T-Shirts</option>
-          <option value="stickers">Stickers</option>
-        </select>
-        </div>
 
-        <div className='grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 py-6'>
-          <Product
-            name=" Black Printed Coffee Mug"
-            category="Mug"
-            price="$15.00"
-            photo="https://images.unsplash.com/photo-1616241673111-508b4662c707?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29mZmVlJTIwbXVnfGVufDB8fDB8fHww"
-          />
-          <Product
-            name=" Fathers Day Coffee Mug"
-            category="Mug"
-            price="$19.00"
-            photo="https://images.unsplash.com/photo-1616241673111-508b4662c707?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29mZmVlJTIwbXVnfGVufDB8fDB8fHww"
-          />
-          <Product
-            name="Green Printed T-Shirt"
-            category="T-Shirts"
-            price="$34.00"
-            photo="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D"
-          />
-          <Product
-            name=" Personalised Mug"
-            category="Mug"
-            price="$15.00"
-            photo="https://images.unsplash.com/photo-1616241673111-508b4662c707?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29mZmVlJTIwbXVnfGVufDB8fDB8fHww"
-          />
-          <Product
-            name="Printed Brown TShirt"
-            category="T-Shirt"
-            price="$25.00"
-            photo="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D"
-          />
-          <Product
-            name="Printed Dark Blue T-Shirt"
-            category="T-Shirt"
-            price="$34.00"
-            photo="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D"
-          />
-          <Product
-            name="Printed Dark Blue T-Shirt"
-            category="T-Shirt"
-            price="$34.00"
-            photo="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D"
-          />
-          <Product
-            name="Printed Dark Blue T-Shirt"
-            category="T-Shirt"
-            price="$34.00"
-            photo="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D"
-          />
-          <Product
-            name="Printed Dark Blue T-Shirt"
-            category="T-Shirt"
-            price="$34.00"
-            photo="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D"
-          />
-        </div>
+      <Header />
 
-        <div className='p-4 flex gap-1'>
-          <Tabs number="1" color="bg-orange-500" text="text-white-500"/>
-          <Tabs number="2" color="bg-white-500" text="text-orange-500"/>
-          <Tabs number="&rarr;" color="bg-white-500" text="text-orange-500"/>
-        </div>  
+
+      <div className="flex justify-between items-center ">
+        <h2 className="text-2xl font-extrabold">Things to get done</h2>
+        <button className="bg-yellow-400 hover:bg-yellow-500 hover:shadow-2xs hover:shadow-black text-white font-semibold px-3  py-3 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-102"
+          onClick={handleRefresh}
+        >
+          Refresh
+        </button>
       </div>
-            <Footer/>
-    </div>
-  )
+
+
+      <div className='flex flex-col gap-2 space-evenly items-start ml-2 shadow-lg '>
+
+        <p className='text-xl font-semibold p-4 text-gray-600'>Things to do : </p>
+
+        {taskList.length > 0 && <div className='flex flex-col gap-1 ml-4'>
+
+          {taskList.map((task, index) => (
+            <div key={index} className="text-gray-500">
+              <Task task={task} onCheck={() => handleCheck(index)} />
+            </div>
+          ))}
+
+
+        </div>}
+
+        <div className='ml-4 mb-4 '>
+
+          <div className={`overflow-hidden transition-all duration-500 ease-in-out ${formshow ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+            {formshow && <ToDoForm onSave={handleAddTask} onCancel={handleCancel} />}
+          </div>
+
+
+          {buttonShow ? <button className="bg-yellow-400 hover:bg-yellow-500 hover:shadow-2xs hover:shadow-black text-white font-semibold px-3  py-3 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-102" onClick={handleAdd}>Add To-Do</button> : null}
+
+        </div>
+      </div>
+
+      <div className='flex flex-col  items-start gap-2 ml-2'>
+
+        <h2 className='text-gray-600 font-bold text-xl'>Things done : </h2>
+        {doneList.length > 0 && <div className='flex flex-col gap-1 ml-4'>
+
+          {doneList.map((task, index) => (
+            <div key={index} className="text-gray-500">
+              <Task task={task} onCheck={() => handleUncheck(index)} checked={true} />
+            </div>
+          ))}
+
+
+        </div>}
+      </div>
+
+    </div >
+  );
 }
 
-export default App
+export default App;
