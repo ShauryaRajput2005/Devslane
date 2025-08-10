@@ -88,7 +88,7 @@ function App() {
           </div>
 
 
-          {buttonShow ? <button className="bg-yellow-400 hover:bg-yellow-500 hover:shadow-2xs hover:shadow-black text-white font-semibold px-3  py-3 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-102" onClick={handleAdd}>Add To-Do</button> : null}
+          {buttonShow ? <button className="bg-yellow-400 hover:bg-yellow-500 hover:shadow-2xs hover:shadow-black text-white font-semibold px-3  py-3 rounded-3xl shadow-md transform transition-transform duration-300 hover:scale-102" onClick={handleAdd}>Add To-Do</button> : null}
 
         </div>
       </div>
