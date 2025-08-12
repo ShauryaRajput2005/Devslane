@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Form, useFormik } from 'formik';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -9,11 +9,60 @@ import Home from './Home';
 import ProductDetails from './ProductDetails';
 import CartPage from './CartPage';
 import LoginPage from './LoginPage';
+import axios from "axios";
+import { Loading } from "./Loading";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [isVerified,setisVerified]=useState(false)
+  const [isVerified, setisVerified] = useState(null);
 
+  const [loading, setLoading] = useState(true);
+
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem("user");
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
+
+
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+     console.log("Token on mount:", token);
+    if (token) {
+      axios.get("https://myeasykart.codeyogi.io/me", {
+        headers: {
+          Authorization: token,
+        },
+      })
+        .then((response) => {
+          console.log('User data fetched:', response.data.user);
+          setUser(response.data.user);
+          setisVerified(true);
+          setLoading(false);
+        })
+        .catch(() => {
+          setLoading(false);
+          setisVerified(false);
+        });
+    } else {
+      setLoading(false);
+      setisVerified(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem("user", JSON.stringify(user));
+    } else {
+      localStorage.removeItem("user");
+    }
+  }, [user]);
+
+
+
+  if (loading) {
+    return <Loading />
+  }
   const addToCart = (product) => {
     const exists = cartItems.find(item => item.id === product.id);
     if (exists) {
@@ -44,14 +93,14 @@ function App() {
     <BrowserRouter>
       <div className='flex flex-col bg-[url("https://plus.unsplash.com/premium_photo-1673029926917-40a9e3336b5b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] bg-cover gap-20' >
         {/* Fixed Navbar */}
-        <Navbar />
+        <Navbar user={user} />
 
         {/* Main Content */}
         <main className='mt-16 self-center'>
           <Routes>
-            <Route path="/login" element={<LoginPage setisVerified={setisVerified} />} />
-            <Route path="/" element={ isVerified ? <Home />: <Navigate to="/login" />}/>
-             <Route
+            <Route path="/login" element={<LoginPage setisVerified={setisVerified} setUser={setUser} />} />
+            <Route path="/" element={isVerified ? <Home /> : <Navigate to="/login" />} />
+            <Route
               path="/product/:id"
               element={
                 isVerified
