@@ -11,6 +11,7 @@ import CartPage from './CartPage';
 import LoginPage from './LoginPage';
 import axios from "axios";
 import { Loading } from "./Loading";
+import SignupPage from "./Signup";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -27,7 +28,7 @@ function App() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-     console.log("Token on mount:", token);
+    console.log("Token on mount:", token);
     if (token) {
       axios.get("https://myeasykart.codeyogi.io/me", {
         headers: {
@@ -100,6 +101,10 @@ function App() {
           <Routes>
             <Route path="/login" element={<LoginPage setisVerified={setisVerified} setUser={setUser} />} />
             <Route path="/" element={isVerified ? <Home /> : <Navigate to="/login" />} />
+            <Route
+              path="/signup"
+              element={<SignupPage setisVerified={setisVerified} setUser={setUser} />}
+            />
             <Route
               path="/product/:id"
               element={
