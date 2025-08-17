@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { withFormik, Form } from 'formik';
-import { basicSchema } from './schemas';
+import { loginSchema } from './schemas';
 import Input from './Input';
 
 import { useNavigate, Link } from 'react-router-dom';
@@ -22,7 +22,7 @@ function LoginForm(props) {
                     Login
                 </button>
             </Form>
-               <div className="mt-4">
+            <div className="mt-4">
                 <p className="text-sm text-gray-600">
                     Already have an account?{" "}
                     <Link
@@ -42,7 +42,7 @@ const EnhancedLogin = withFormik({
         email: '',
         password: ''
     }),
-    validationSchema: basicSchema,
+    validationSchema: loginSchema,
     handleSubmit: (values, bag) => {
         axios.post(`https://myeasykart.codeyogi.io/login`, {
             email: values.email,
@@ -55,12 +55,27 @@ const EnhancedLogin = withFormik({
                 localStorage.setItem("user", JSON.stringify(user));
                 bag.props.setUser(user);
                 bag.props.setisVerified(true);
-                bag.props.navigate("/"); //
+                bag.props.showAlert("Login successful 🎉", "success");
+                bag.props.navigate("/");
             })
             .catch((error) => {
                 console.error("Login Error:", error);
+
+                if (error.response?.data?.message) {
+                    const msg = error.response.data.message;
+
+                    if (msg.toLowerCase().includes("not found")) {
+                        // 🔔 Special case: No account exists
+                        bag.props.showAlert("No account exists with this email. Please sign up!", "error");
+                    } else {
+                        bag.props.showAlert(msg, "error");
+                    }
+                } else {
+                    bag.props.showAlert("Login failed. Please try again.", "error");
+                }
             });
     }
+
 })(LoginForm);
 
 export default function LoginPage(props) {

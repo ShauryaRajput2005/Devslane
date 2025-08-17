@@ -1,13 +1,12 @@
 import * as Yup from "yup";
 
-export const basicSchema = Yup.object().shape({
-  fullname: Yup.string()
-    .matches(/^[a-zA-Z\s]+$/, "Invalid name") 
-    .required("Name is required"),
-  email: Yup.string()
-    .email("Invalid email")
-    .required("Email is required"),
-  password: Yup.string()
-    .min(5, "Password must be at least 5 characters")
-    .required("Password is required"),
+export const loginSchema = Yup.object().shape({
+  email: Yup.string().email("Invalid email").required("Required"),
+  password: Yup.string().min(6, "Too short").required("Required"),
+});
+
+export const signupSchema = Yup.object().shape({
+  fullName: Yup.string().min(2, "Too short").required("Required"),
+  email: Yup.string().email("Invalid email").required("Required"),
+  password: Yup.string().min(6, "Too short").required("Required"),
 });

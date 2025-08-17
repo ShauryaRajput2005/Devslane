@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { withFormik, Form } from 'formik';
-import { basicSchema } from './schemas';
+import { signupSchema } from './schemas';
 import Input from './Input';
 import { useNavigate, Link } from 'react-router-dom';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function Signup(props) {
     return (
@@ -50,7 +50,7 @@ const EnhancedSignup = withFormik({
         email: '',
         password: ''
     }),
-    validationSchema: basicSchema,
+    validationSchema: signupSchema,
     handleSubmit: (values, bag) => {
         axios.post(`https://myeasykart.codeyogi.io/signup`, values)
             .then((response) => {
@@ -60,6 +60,7 @@ const EnhancedSignup = withFormik({
                 localStorage.setItem("user", JSON.stringify(user));
                 bag.props.setUser(user);
                 bag.props.setisVerified(true);
+                bag.props.showAlert("Signup successful 🎉", "success");
                 bag.props.navigate("/");
             })
             .catch((error) => {
