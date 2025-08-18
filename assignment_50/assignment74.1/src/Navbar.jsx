@@ -14,7 +14,7 @@ function Navbar({ user, setUser, setisVerified }) {
 
 
   return (
-    <div className='fixed top-0 w-screen bg-white shadow-md z-50 bg-[url("https://plus.unsplash.com/premium_photo-1673029926917-40a9e3336b5b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] bg-cover'>
+    <div className='fixed top-0 w-screen shadow-lg z-50 bg-gradient-to-r from-blue-200 to-emerald-200'>
       <div className="max-w-screen-xl mx-auto px-6 py-3 flex items-center justify-between">
 
         {/* Logo */}
