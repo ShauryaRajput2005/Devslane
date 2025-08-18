@@ -1,15 +1,18 @@
-import { Link } from "react-router-dom";
 
-function Navbar({ user, setUser, setisVerified }) {
+import { Link, useNavigate } from "react-router-dom";
+
+
+function Navbar({ user, setUser, setisVerified ,showAlert}) {
   console.log("User in Navbar:", user);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
     setUser(null);
     setisVerified(false);
-    showAlert("Logged out successfully ✅", "success"); // optional alert
-    navigate("/login"); // force redirect to login page
+    showAlert("Logged out successfully ✅", "success"); 
+    navigate("/login"); 
   };
 
 

@@ -7,17 +7,21 @@ function ProductList({ products }) {
 
   return (
     <>
-      {products.map((item) => (
-        <Product
-          key={item.id}
-          id={item.id}
-          title={item.title}
-          category={item.category}
-          price={item.price}
-          photo={item.thumbnail}
-          rating={item.rating}
-        />
-      ))}
+      {products.map((item) => {
+    
+
+        return (
+          <Product
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            category={item.category}
+            price={item.price}
+            photo={item.thumbnail}
+            rating={item.rating}
+          />
+        );
+      })}
     </>
   );
 }

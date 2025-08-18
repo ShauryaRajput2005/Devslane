@@ -69,9 +69,10 @@ function App() {
 
 
 
-  if (loading) {
-    return <Loading />
+  if (loading || isVerified === null) {
+    return <Loading />;
   }
+
   const addToCart = (product) => {
     const exists = cartItems.find(item => item.id === product.id);
     if (exists) {
@@ -107,7 +108,7 @@ function App() {
       {alert && <Alert message={alert.message} type={alert.type} />}
       <div className='flex flex-col bg-gradient-to-r from-blue-200 to-emerald-200  h-full w-screen bg-cover gap-20' >
         {/* Fixed Navbar */}
-        <Navbar user={user} setUser={setUser} setisVerified={setisVerified}/>
+        <Navbar user={user} setUser={setUser} setisVerified={setisVerified} showAlert={showAlert} />
 
         {/* Main Content */}
         <main className='mt-16 self-center'>
@@ -115,56 +116,26 @@ function App() {
             <Route
               path="/login"
               element={
-                isVerified
-                  ? <Navigate to="/" /> 
-                  : <LoginPage
-                    setisVerified={setisVerified}
-                    setUser={setUser}
-                    showAlert={showAlert}
-                  />
+                isVerified ? <Navigate to="/" /> : <LoginPage setisVerified={setisVerified} setUser={setUser} showAlert={showAlert} />
               }
             />
             <Route
               path="/signup"
               element={
-                isVerified
-                  ? <Navigate to="/" /> 
-                  : <SignupPage
-                    setisVerified={setisVerified}
-                    setUser={setUser}
-                    showAlert={showAlert}
-                  />
+                isVerified ? <Navigate to="/" /> : <SignupPage setisVerified={setisVerified} setUser={setUser} showAlert={showAlert} />
               }
             />
-
             <Route
               path="/product/:id"
-              element={
-                isVerified
-                  ? <ProductDetails addToCart={addToCart} />
-                  : <Navigate to="/login" />
-              }
+              element={isVerified ? <ProductDetails addToCart={addToCart} /> : <LoginPage setisVerified={setisVerified} setUser={setUser} showAlert={showAlert} />}
             />
-            <Route path="/" element={isVerified
-              ? (
-                <Home />
-              )
-              : <Navigate to="/login" />} />
             <Route
               path="/cart"
-              element={
-                isVerified
-                  ? (
-                    <CartPage
-                      cartItems={cartItems}
-                      updateQuantity={updateQuantity}
-                      removeFromCart={removeFromCart}
-                    />
-                  )
-                  : <Navigate to="/login" />
-              }
+              element={isVerified ? <CartPage cartItems={cartItems} updateQuantity={updateQuantity} removeFromCart={removeFromCart} /> : <LoginPage setisVerified={setisVerified} setUser={setUser} showAlert={showAlert} />}
             />
+            <Route path="/" element={<Home />} />
           </Routes>
+
         </main>
 
         <Footer />
