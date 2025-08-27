@@ -97,8 +97,8 @@ During my internship, I built a variety of frontend projects using:
 
 ### 😀 Mood Tracker
 <p>
-  <a href="https://assignment74-1.netlify.app">
-    <img src="https://img.shields.io/badge/Assignment%2074.1-New%20Page-orange?style=for-the-badge" />
+  <a href="https://assignment87-1.netlify.app">
+    <img src="https://img.shields.io/badge/Assignment%2087.1-Mood%20Tracker-orange?style=for-the-badge" />
   </a>
 </p>
 
