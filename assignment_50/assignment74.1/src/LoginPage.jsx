@@ -7,6 +7,8 @@ import { useNavigate, Link } from 'react-router-dom';
 
 
 function LoginForm(props) {
+    
+    
     return (
         <div className='h-100 flex flex-col justify-center items-center bg-transparent overflow-hidden'>
             <Form className="p-6 rounded flex flex-col w-75 bg-transparent">

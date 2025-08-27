@@ -1,8 +1,9 @@
 import Product from './Product.jsx';
+import "./App.css";
 
 function ProductList({ products }) {
   if (!products || products.length === 0) {
-    return <p className="text-gray-500 text-center w-full">No products found.</p>;
+    return <p className="text-gray-500 text-center w-full animate-block">No products found.</p>;
   }
 
   return (
@@ -19,6 +20,7 @@ function ProductList({ products }) {
             price={item.price}
             photo={item.thumbnail}
             rating={item.rating}
+            className="animate-block"
           />
         );
       })}

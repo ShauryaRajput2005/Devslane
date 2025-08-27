@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import ProductDetails from "./ProductDetails";
 
 
-function Product({ id, title, category, price, photo ,rating }) {
+function Product({ id, title, category, price, photo ,rating ,className}) {
 
   return (
-    <div className="bg-gray-100 flex flex-col rounded shadow-md w-full max-w-sm h-110 overflow-hidden bg-white/20 backdrop-blur-xs backdrop-opacity-50 transition-transform hover:backdrop-opacity-70 duration-200 ease-in-out hover:scale-102">
+    <div className={`bg-gray-100 flex flex-col rounded shadow-md w-full max-w-sm h-110 overflow-hidden bg-white/20 backdrop-blur-xs backdrop-opacity-50 transition-transform hover:backdrop-opacity-70 duration-200 ease-in-out hover:scale-102 ${className}`}>
       <div className="w-full h-3/5">
         <img
           src={photo}

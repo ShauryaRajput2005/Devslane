@@ -1,7 +1,6 @@
-
 import { useState, useEffect } from "react";
-import { Form, useFormik } from 'formik';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import axios from "axios";
 
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -9,15 +8,15 @@ import Home from './Home';
 import ProductDetails from './ProductDetails';
 import CartPage from './CartPage';
 import LoginPage from './LoginPage';
-import axios from "axios";
-import { Loading } from "./Loading";
 import SignupPage from "./Signup";
+import { Loading } from "./Loading";
 import Alert from "./Alert";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [isVerified, setisVerified] = useState(null);
 
+  const [token, setToken] = useState(() => localStorage.getItem("token")); // ✅ keep in state
+  const [isVerified, setisVerified] = useState(!!token);
   const [loading, setLoading] = useState(true);
 
   const [user, setUser] = useState(() => {
@@ -25,39 +24,37 @@ function App() {
     return savedUser ? JSON.parse(savedUser) : null;
   });
 
-  const [alert, setAlert] = useState(null)
-
-
-  const token = localStorage.getItem("token");
+  const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type = "error") => {
     setAlert({ message, type });
     setTimeout(() => setAlert(null), 4000);
   };
 
+  // ✅ Verify token on mount & when token changes
   useEffect(() => {
-    console.log("Token on mount:", token);
-    if (token) {
-      axios.get("https://myeasykart.codeyogi.io/me", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-        .then((response) => {
-          console.log('User data fetched:', response.data.user);
-          setUser(response.data.user);
-          setisVerified(true);
-          setLoading(false);
-        })
-        .catch(() => {
-          setLoading(false);
-          setisVerified(false);
-        });
-    } else {
-      setLoading(false);
+    if (!token) {
       setisVerified(false);
+      setLoading(false);
+      return;
     }
-  }, []);
+
+    setLoading(true);
+    axios.get("https://myeasykart.codeyogi.io/me", {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => {
+        setUser(response.data.user);
+        setisVerified(true);
+        setLoading(false);
+      })
+      .catch(() => {
+        localStorage.removeItem("token");
+        setToken(null);
+        setisVerified(false);
+        setLoading(false);
+      });
+  }, [token]); // ✅ runs again when token updates
 
   useEffect(() => {
     if (user) {
@@ -67,9 +64,7 @@ function App() {
     }
   }, [user]);
 
-
-
-  if (loading || isVerified === null) {
+  if (loading) {
     return <Loading />;
   }
 
@@ -106,36 +101,49 @@ function App() {
   return (
     <BrowserRouter>
       {alert && <Alert message={alert.message} type={alert.type} />}
-      <div className='flex flex-col bg-gradient-to-r from-blue-200 to-emerald-200  h-full w-screen bg-cover gap-20' >
-        {/* Fixed Navbar */}
+      <div className='flex flex-col bg-gradient-to-r from-blue-200 to-emerald-200 h-full w-screen bg-cover gap-20'>
+        
         <Navbar user={user} setUser={setUser} setisVerified={setisVerified} showAlert={showAlert} />
 
-        {/* Main Content */}
         <main className='mt-16 self-center'>
           <Routes>
             <Route
               path="/login"
               element={
-                isVerified ? <Navigate to="/" /> : <LoginPage setisVerified={setisVerified} setUser={setUser} showAlert={showAlert} />
+                isVerified
+                  ? <Navigate to="/" />
+                  : <LoginPage setToken={setToken} setisVerified={setisVerified} setUser={setUser} showAlert={showAlert} />
               }
             />
             <Route
               path="/signup"
               element={
-                isVerified ? <Navigate to="/" /> : <SignupPage setisVerified={setisVerified} setUser={setUser} showAlert={showAlert} />
+                isVerified
+                  ? <Navigate to="/" />
+                  : <SignupPage setToken={setToken} setisVerified={setisVerified} setUser={setUser} showAlert={showAlert} />
               }
             />
             <Route
               path="/product/:id"
-              element={isVerified ? <ProductDetails addToCart={addToCart} /> : <LoginPage setisVerified={setisVerified} setUser={setUser} showAlert={showAlert} />}
+              element={
+                isVerified
+                  ? <ProductDetails addToCart={addToCart} />
+                  : <Navigate to="/login" />
+              }
             />
             <Route
               path="/cart"
-              element={isVerified ? <CartPage cartItems={cartItems} updateQuantity={updateQuantity} removeFromCart={removeFromCart} /> : <LoginPage setisVerified={setisVerified} setUser={setUser} showAlert={showAlert} />}
+              element={
+                isVerified
+                  ? <CartPage cartItems={cartItems} updateQuantity={updateQuantity} removeFromCart={removeFromCart} />
+                  : <Navigate to="/login" />
+              }
             />
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              element={isVerified ? <Home /> : <Navigate to="/login" />}
+            />
           </Routes>
-
         </main>
 
         <Footer />
